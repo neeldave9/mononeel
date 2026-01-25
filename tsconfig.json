@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "paths": {
       "@repo/ui": ["packages/ui/src"]
     }
