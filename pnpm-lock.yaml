@@ -14,7 +14,7 @@ importers:
 
   applications/next-app:
     dependencies:
-      '@create-neel/ui':
+      '@mononeel/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -57,7 +57,7 @@ importers:
 
   applications/portfolio:
     dependencies:
-      '@create-neel/ui':
+      '@mononeel/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       astro:

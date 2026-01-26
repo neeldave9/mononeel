@@ -10,6 +10,6 @@
   },
   "dependencies": {
     "astro": "^5.16.15",
-    "@create-neel/ui": "workspace:*"
+    "@mononeel/ui": "workspace:*"
   }
 }
