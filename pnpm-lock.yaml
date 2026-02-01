@@ -8,9 +8,18 @@ importers:
 
   .:
     devDependencies:
+      '@types/react':
+        specifier: ^19.2.9
+        version: 19.2.9
+      '@types/react-dom':
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.9)
       turbo:
         specifier: ^2.7.6
         version: 2.7.6
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
   applications/next-app:
     dependencies:
