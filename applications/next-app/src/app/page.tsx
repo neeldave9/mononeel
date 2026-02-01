@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "@create-neel/ui";
+import { Button } from "@mononeel/ui";
 
 export default function Home() {
   return (
