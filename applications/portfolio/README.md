@@ -1,6 +1,6 @@
-![Astro Nano](_astro_nano.png)
+![Neel Dave](_astro_nano.png)
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+Neel Dave is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
 
 Built with Astro, Tailwind and Typescript, an no frameworks.
 
@@ -27,7 +27,7 @@ It was designed as an even more minimal theme than my popular theme [Astro Spher
 - ✅ MDX Support (components in your markdown)
 
 ## 💯 Lighthouse score
-![Astro Nano Lighthouse Score](_lighthouse.png)
+![Neel Dave Lighthouse Score](_lighthouse.png)
 
 ## 🕊️ Lightweight
 No frameworks or added bulk

@@ -14,7 +14,7 @@ Customize the base site
 // src/consts.ts
 
 export const SITE: Site = {
-  NAME: "Astro Nano",
+  NAME: "Neel Dave",
   EMAIL: "markhorn.dev@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
@@ -37,7 +37,7 @@ Customize your page metadata
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  DESCRIPTION: "Neel Dave is a minimal and lightweight blog and portfolio.",
 };
 ```
 
