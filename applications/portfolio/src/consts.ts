@@ -25,7 +25,6 @@ export const WORK: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-<<<<<<< HEAD
   DESCRIPTION:
     "A collection of my projects, with links to repositories and demos.",
 };
@@ -39,22 +38,4 @@ export const SOCIALS: Socials = [
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/neel-dave02/",
   },
-=======
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
-};
-
-export const SOCIALS: Socials = [
-  { 
-    NAME: "twitter-x",
-    HREF: "https://twitter.com/markhorn_dev",
-  },
-  { 
-    NAME: "github",
-    HREF: "https://github.com/markhorn-dev"
-  },
-  { 
-    NAME: "linkedin",
-    HREF: "https://www.linkedin.com/in/markhorn-dev",
-  }
->>>>>>> ea0ebdb923c8fcba77496b816a51ae7aae3e0f44
 ];
