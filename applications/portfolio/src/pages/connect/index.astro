@@ -1,0 +1,80 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE, SOCIALS } from "@consts";
+import { isFeatureEnabled } from "@config/features";
+
+if (!isFeatureEnabled("connect")) {
+  return Astro.redirect("/404");
+}
+
+const PHONE_DISPLAY = "+1 (555) 123-4567";
+const PHONE_HREF = "+15551234567";
+const linkedin = SOCIALS.find((social) => social.NAME === "linkedin")?.HREF ?? "#";
+---
+
+<PageLayout
+  title="Connect"
+  description="Quick ways to connect with me for consulting and collaborations."
+>
+  <Container>
+    <div class="space-y-10">
+      <!-- <div class="animate font-semibold text-black dark:text-white">Connect</div>s -->
+
+      <section class="animate">
+        <div class="mx-auto max-w-xl rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/15 dark:bg-zinc-900">
+          <div class="flex flex-col items-center gap-4 text-center">
+            <div
+              class="flex h-20 w-20 items-center justify-center rounded-full bg-zinc-200 text-lg font-semibold text-zinc-700 dark:bg-zinc-700 dark:text-zinc-100"
+              aria-label="Avatar placeholder"
+            >
+              ND
+            </div>
+
+            <div class="space-y-1">
+              <h1 class="text-xl font-semibold text-black dark:text-white">
+                {SITE.NAME}
+              </h1>
+              <p class="text-sm opacity-80">Software Engineer / Consultant</p>
+            </div>
+          </div>
+
+          <div class="mt-6 space-y-4">
+            <p>
+              I build practical web products that help businesses move faster and
+              reduce repetitive work.
+            </p>
+            <p>
+              If you need help with a new product, a website refresh, or an
+              internal tool, I can help scope and build it with you.
+            </p>
+          </div>
+
+          <ul class="mt-6 flex flex-col gap-2">
+            <li>
+              <Link href="/" aria-label="View portfolio projects">
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link href={linkedin} aria-label={`LinkedIn profile for ${SITE.NAME}`}>
+                LinkedIn
+              </Link>
+            </li>
+            <li>
+              <Link href={`tel:${PHONE_HREF}`} aria-label={`Call ${SITE.NAME}`}>
+                Phone: {PHONE_DISPLAY}
+              </Link>
+            </li>
+            <li>
+              <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+                Email: {SITE.EMAIL}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </Container>
+</PageLayout>
