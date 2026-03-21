@@ -4,6 +4,11 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
+import { isFeatureEnabled } from "@config/features";
+
+if (!isFeatureEnabled("projects")) {
+  return Astro.redirect("/404");
+}
 
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)

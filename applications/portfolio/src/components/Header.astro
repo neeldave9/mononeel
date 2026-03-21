@@ -2,6 +2,11 @@
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
+import { FEATURES, NAV_FEATURE_ORDER } from "@config/features";
+
+const enabledNavItems = NAV_FEATURE_ORDER
+  .map((key) => ({ key, feature: FEATURES[key] }))
+  .filter(({ feature }) => feature.enabled);
 ---
 
 <header>
@@ -13,21 +18,20 @@ import { SITE } from "@consts";
         </div>
       </Link>
       <nav class="flex gap-1">
-        <Link href="/blog">
-          blog
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work">
-          work
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/projects">
-          projects
-        </Link>
+        {
+          enabledNavItems.map(({ feature }, index) => (
+            <>
+              <Link href={feature.routePrefix}>
+                {feature.navLabel}
+              </Link>
+              {index < enabledNavItems.length - 1 && (
+                <span>
+                  {`/`}
+                </span>
+              )}
+            </>
+          ))
+        }
       </nav>
     </div>
   </Container>
