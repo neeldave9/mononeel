@@ -4,6 +4,11 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
+import { isFeatureEnabled } from "@config/features";
+
+if (!isFeatureEnabled("blog")) {
+  return Astro.redirect('/404');
+}
 
 const data = (await getCollection("blog"))
   .filter(post => !post.data.draft)

@@ -5,8 +5,13 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
+import { isFeatureEnabled } from "@config/features";
 
 export async function getStaticPaths() {
+  if (!isFeatureEnabled("blog")) {
+    return [];
+  }
+
   const posts = (await getCollection("blog"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
