@@ -4,15 +4,18 @@ import Link from "@components/Link.astro";
 import { SITE } from "@consts";
 import { FEATURES, NAV_FEATURE_ORDER } from "@config/features";
 
-const enabledNavItems = NAV_FEATURE_ORDER
-  .map((key) => ({ key, feature: FEATURES[key] }))
-  .filter(({ feature }) => feature.enabled);
+const enabledNavItems = NAV_FEATURE_ORDER.map((key) => ({
+  key,
+  feature: FEATURES[key],
+})).filter(({ feature }) => feature.enabledInNav);
+
+const homeLink = Astro.url.pathname === "/" ? "/connect" : "/";
 ---
 
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
+      <Link href={homeLink} underline={false}>
         <div class="font-semibold">
           {SITE.NAME}
         </div>
@@ -21,14 +24,8 @@ const enabledNavItems = NAV_FEATURE_ORDER
         {
           enabledNavItems.map(({ feature }, index) => (
             <>
-              <Link href={feature.routePrefix}>
-                {feature.navLabel}
-              </Link>
-              {index < enabledNavItems.length - 1 && (
-                <span>
-                  {`/`}
-                </span>
-              )}
+              <Link href={feature.routePrefix}>{feature.navLabel}</Link>
+              {index < enabledNavItems.length - 1 && <span>{`/`}</span>}
             </>
           ))
         }

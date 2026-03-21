@@ -1,8 +1,9 @@
-export type FeatureKey = "blog" | "work" | "projects" | "consulting";
+export type FeatureKey = "blog" | "work" | "projects" | "consulting" | "connect";
 export type ContentCollectionKey = "blog" | "work" | "projects";
 
 type FeatureConfig = {
   enabled: boolean;
+  enabledInNav: boolean;
   routePrefix: `/${string}`;
   navLabel: string;
   contentCollection?: ContentCollectionKey;
@@ -11,23 +12,33 @@ type FeatureConfig = {
 export const FEATURES: Record<FeatureKey, FeatureConfig> = {
   blog: {
     enabled: false,
+    enabledInNav: false,
     routePrefix: "/blog",
     navLabel: "blog",
     contentCollection: "blog",
   },
   work: {
     enabled: true,
+    enabledInNav: true,
     routePrefix: "/work",
     navLabel: "work",
     contentCollection: "work",
   },
   consulting: {
     enabled: true,
+    enabledInNav: true,
     routePrefix: "/consulting",
     navLabel: "consulting",
   },
+  connect: {
+    enabled: true,
+    enabledInNav: false,
+    routePrefix: "/connect",
+    navLabel: "connect",
+  },
   projects: {
     enabled: true,
+    enabledInNav: true,
     routePrefix: "/projects",
     navLabel: "projects",
     contentCollection: "projects",
@@ -38,6 +49,7 @@ export const NAV_FEATURE_ORDER: FeatureKey[] = [
   "blog",
   "work",
   "consulting",
+  "connect",
   "projects",
 ];
 
