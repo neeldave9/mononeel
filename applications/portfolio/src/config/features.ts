@@ -11,7 +11,7 @@ type FeatureConfig = {
 
 export const FEATURES: Record<FeatureKey, FeatureConfig> = {
   blog: {
-    enabled: false,
+    enabled: true,
     enabledInNav: false,
     routePrefix: "/blog",
     navLabel: "blog",
