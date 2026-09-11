@@ -9,6 +9,7 @@ node_modules/
 # Turbo cache
 # Turbo stores its local cache here
 .turbo/
+.expo/
 # Optional: also cache .next builds if you want them ignored
 **/.next/
 **/dist/
